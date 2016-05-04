@@ -55,14 +55,14 @@
                 <thead>
                     <tr>
                         <th>Avatar</th>
-                        <th>Nombre</th>
+                        <th><a ng-click="columna='nombre'; reverse=!reverse;">Nombre</a></th>
                         <th>Telefono</th>
                         <th>Celular</th>
                         <th>Sexo</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="datos in personas | filter:busqueda">
+                    <tr ng-repeat="datos in personas | filter:busqueda | orderBy:columna:reverse">
                         <td><img ng-src="img/{{ datos.avatar }}" class="avatar img-circle"></td>
                         <td>{{ datos.nombre }}</td>
                         <td>{{ datos.telefono }}</td>
